@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seminar Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="scrip.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0b0b0b;
+      color: #fdf9f9;
+    }
+    .navbar {
+      margin-bottom: 2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #007bff;
+      color: white;
+    }
+    .card {
+      margin: 1rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #007bff;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Seminar Online</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">Deskripsi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#speakers">Pembicara</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#register">Pendaftaran</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Selamat Datang di Seminar Online</h1>
+    <p>Jelajahi dunia ilmu bersama pembicara inspiratif kami!</p>
+  </div>
+
+  <!-- Deskripsi -->
+  <section id="about" class="container my-5">
+    <h2>Deskripsi Acara</h2>
+    <p>"Seminar Online ini memberikan kesempatan unik untuk berinteraksi langsung dengan pembicara yang berpengalaman dan profesional di bidangnya. Pelajari teknik, tips, dan strategi yang bisa langsung diterapkan dalam pekerjaan dan kehidupan Anda.".</p>
+  </section>
+
+  <!-- Pembicara -->
+  <section id="speakers" class="container my-5">
+    <h2>Pembicara</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="haikal.jpg" class="card-img-top" alt="Pembicara 1">
+          <div class="card-body">
+            <h5 class="card-title">DR. HAIKAL ADITAMA</h5>
+            <p class="card-text">Pakar teknologi dan inovasi.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="alifya.jpg" class="card-img-top" alt="Pembicara 2">
+          <div class="card-img-top">
+            <h5 class="card-title">MRs. ALIFYA AZZAHRA</h5>
+            <p class="card-text">Ahli desain UX/UI.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="farhan.jpg" class="card-img-top" alt="Pembicara 3">
+          <div class="card-body">
+            <h5 class="card-title">FARHAN MALIK</h5>
+            <p class="card-text">Entrepreneur di bidang AI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pendaftaran -->
+  <section id="register" class="container my-5">
+    <h2>Pendaftaran</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nama Lengkap</label>
+        <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda">
+      </div>
+      <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+    </form>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="container my-5">
+    <h2>Kontak</h2>
+    <p>Email: <a href="mailto:info@seminaronline.com">info@seminaronline.com</a></p>
+    <p>Telepon: +62 812 3456 7890</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Seminar Online. All Rights Reserved.</p>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Smooth Scroll for Navbar Links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetID = this.getAttribute('href');
+            const targetSection = document.querySelector(targetID);
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        });
+    });
+
+    // Form Validation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission for demo purposes
+
+        // Get form values
+        const name = document.querySelector('#name').value.trim();
+        const email = document.querySelector('#email').value.trim();
+
+        // Simple validation
+        if (name === '' || email === '') {
+            alert('Harap isi semua field dengan benar!');
+            return;
+        }
+
+        // Email validation (simple regex)
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert('Harap masukkan alamat email yang valid!');
+            return;
+        }
+
+        // Success message
+        alert(`Terima kasih telah mendaftar, ${name}! Kami akan menghubungi Anda melalui email: ${email}`);
+        form.reset(); // Reset form fields
+    });
+
+    // Navbar Active State on Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 70;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Scroll to Top Button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.textContent = '⬆️';
+    scrollToTopBtn.style.position = 'fixed';
+    scrollToTopBtn.style.bottom = '20px';
+    scrollToTopBtn.style.right = '20px';
+    scrollToTopBtn.style.backgroundColor = '#007bff';
+    scrollToTopBtn.style.color = 'white';
+    scrollToTopBtn.style.border = 'none';
+    scrollToTopBtn.style.borderRadius = '50%';
+    scrollToTopBtn.style.padding = '10px 15px';
+    scrollToTopBtn.style.cursor = 'pointer';
+    scrollToTopBtn.style.display = 'none';
+    scrollToTopBtn.style.zIndex = '1000';
+    document.body.appendChild(scrollToTopBtn);
+
+    // Show/Hide Scroll to Top Button
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Scroll to Top Functionality
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    });
+
+    // Dynamic Year in Footer
+    const yearSpan = document.createElement('span');
+    yearSpan.textContent = new Date().getFullYear();
+    document.querySelector('footer p').appendChild(yearSpan);
+    </script>
+</body>
+
+</html>
